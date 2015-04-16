@@ -1,0 +1,3 @@
+# This enables the URL `chrome://metabookmarks/content/test.html`
+# https://developer.mozilla.org/en-US/docs/Chrome_Registration#content-instruction
+content metabookmarks content/
