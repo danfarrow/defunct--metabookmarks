@@ -12,8 +12,10 @@ cfx xpi --output-file=../build/metabookmarks.xpi;
 popd;
 
 # Copy manifest & content to xpi
-zip -r build/metabookmarks.xpi source/chrome.manifest;
-zip -r build/metabookmarks.xpi source/content;
+pushd source;
+zip -r ../build/metabookmarks.xpi ./chrome.manifest;
+zip -r ../build/metabookmarks.xpi ./content;
+popd;
 
 # Push xpi to Firefox
-wget --post-file=build/metabookmarks.xpi http://localhost:8888/;
+wget --post-file=./build/metabookmarks.xpi http://localhost:8888/;
