@@ -1,9 +1,9 @@
 {
   "name": "metabookmarks",
-  "title": "metabookmarks",
+  "title": "Metabookmarks",
   "id": "jid1-BYj7uiAyhibCEg",
-  "description": "a basic add-on",
-  "author": "",
+  "description": "Find bookmarks by tag and display them on a bookmarkable page",
+  "author": "Dan Farrow - dan@squarebracket.net",
   "license": "MPL 2.0",
   "version": "0.1"
 }
