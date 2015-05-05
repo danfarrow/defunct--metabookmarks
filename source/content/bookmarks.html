@@ -1,1 +1,114 @@
-yes it worked
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metabookmarks</title>
+	<!--<script type="text/javascript" src="../lib/main.js"></script>-->
+
+	<script type="text/javascript">
+
+		// Testing....
+		alert( 'Trying...' );
+
+		try {
+			showBookmarksByTag( '2013');
+		} catch ( e ) {
+			alert( e );
+		}
+
+
+		/**
+		 * Output list of bookmarks tagged with `tag`
+		 *
+		 * @param Array tags The tags
+		 * @return Null
+		 * @todo Accept an array of tags
+		 */
+		// function showBookmarksByTag ( tags ) {
+		// 	clearOutput();
+
+		// 	// Convert tags to array
+		// 	if ( "string" === typeof tags ){
+		// 		tags = [ tags ];
+		// 	}
+
+		// 	output ( '<ul>' );
+
+		// 	let { search } = require("sdk/places/bookmarks");
+
+		// 	let emitter = search( { tags: tags } );
+
+		// 	emitter.on( "data", function ( data ){
+		// 		output( formatBookmark( data.url, data.title, data.tags ) );
+		// 	})
+		// 	.on( "end", function ( results ){
+		// 		output ( '</ul>' );
+		// 		output(
+		// 			( results.length || "No" )
+		// 			+ " results found for tags \"[ " + tags.join(", ") + " ]\""
+		// 		);
+		// 	});
+		// }
+
+		/**
+		 * Create bookmarks HTML snippet
+		 *
+		 * @param String url Link URL, wrapped in " "
+		 * @param String title Title of link
+		 * @param Array tags Disregarded for now (see @todo below)
+		 * @return String HTML snippet
+		 * @todo Display list of clickable tags after main link
+		 */
+		 // function formatBookmark( url, title, tags ){
+			// return "<li><a target=\"_blank\" href=" + url + ">" + title + "</a></li>";
+		 // }
+
+		/**
+		 * Append some HTML to the specified tab
+		 *
+		 * @param String content The html to append
+		 * @param Object tab OPTIONAL The tab to append it to
+		 * @return Null
+		 */
+		// function output( content, tab ){
+		// 	let tabs = require("sdk/tabs");
+		// 	tab = tab || tabs.activeTab;
+
+		// 	if ( 'string' !== typeof content ){
+		// 		content = content.toString();
+		// 	}
+
+		// 	console.log( 'typeof tab: ' + typeof tab );
+
+		// 	// Escape " from content
+		// 	content = content.replace( /"/g, '\\');
+
+		// 	tab.attach({
+		// 		contentScript: 'document.body.innerHTML += "' + content + '<br>";'
+		// 	});
+		// }
+
+		/**
+		 * Clear the innerHTML of the specified tab
+		 *
+		 * @param Object OPTIONAL tab
+		 * @return Null
+		 */
+		function clearOutput( tab ){
+//			let tabs = require("sdk/tabs");
+			tab = tab || tabs.activeTab;
+
+			tab.attach({
+				contentScript: 'document.body.innerHTML = ""'
+			});
+		}
+
+	</script>
+</head>
+<body>
+	<h2>Search</h2>
+	<form method="get">
+		<input type="text" name="tags" placeholder="Enter a tag" />
+		<button type="submit">Show bookmarks</button>
+	</form>
+</body>
+</html>
